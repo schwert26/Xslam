@@ -1,0 +1,14 @@
+roscore
+rosrun ORB_SLAM3 Mono Vocabulary/ORBvoc.txt Examples_old/Monocular/EuRoC.yaml 
+rosbag play --pause /home/lijiahao/shujuji/MH_01_easy.bag image:=/camera/image_raw
+source devel/setup.bash
+
+/home/lijiahao/shujuji
+./examples/Monocular/mono_tum Vocabulary/ORBvoc.txt examples/Monocular/TUMX.yaml /home/lijiahao/shujuji/rgbd_dataset_freiburg1_xyz
+
+
+rosrun ORB_SLAM3 Mono Vocabulary/ORBvoc.txt /home/lijiahao/桌面/jiahao/softrobot1.yaml
+
+./examples/Monocular/mono_tum Vocabulary/ORBvoc.txt examples/Monocular/TUM1.yaml /home/lijiahao/shujuji/rgbd_dataset_freiburg1_xyz
+
+evo_ape tum groundtruth.txt CameraTrajectory_modified.txt -va --align --correct_scale --plot --plot_mode xyz
